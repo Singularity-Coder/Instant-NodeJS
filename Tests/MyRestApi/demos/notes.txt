@@ -1,0 +1,88 @@
+NODE JS AND MONGO DB
+
+
+THEORY
+Ctrl + ~ to open terminal in VS Code
+RESTful principles - HTTP Verbs - GET, PUT, PATCH, POST, UPDATE
+MVC Pattern - No view
+Express Framework for building the API
+DB - Mongo DB
+Mongoose - schema based solution to model the data
+
+
+NODE JS
+https://nodejs.org/en/download/ 
+- JavaScript on server side
+- It is JS runtime built on Chrome’s V8 JS engine 
+- It is Async and event driven - All APIs are non-blocking IO - so we can use callbacks or promises or async await 
+- It is single threaded but can run multiple instances of the same app on multiple thread
+- NPM is node package manager for node.js modules, comes preinstalled with NodeJS - www.npmjs.com
+
+
+CHECK VERSION
+node —version 
+
+
+VS CODE EXTENSIONS
+REST Client
+
+
+CREATE PROJECT
+cd Desktop/
+mkdir MyRestApi
+cd MyRestApi
+npm init     (This will initialise MyRestApi directory)
+code .        (This will open VS Code - https://stackoverflow.com/questions/29955500/code-is-not-working-in-on-the-command-line-for-visual-studio-code-on-os-x-ma)
+touch app.js
+node app.js           (This will run the app if the file is saved)
+console.log(“I am running…”);        // This is for printing stuff
+
+
+PACKAGE.JS
+This is like Gradle. It manages ur packages
+
+
+INSTALL NODEMON NPM PACKAGE
+// If u run app with this it will run anytime a change is made
+sudo npm install -g nodemon        
+
+// To run the app with nodemon
+nodemon app.js
+
+// To stop the app 
+Ctrl + c
+
+
+DIFFERENT START MECHANISMS
+package.json
+
+// replace "test": "echo \"Error: no test specified\" && exit 1" with "start": "nodemon app.js" 
+{
+  "name": "myrestapi",
+  "version": "1.0.0",
+  "description": "My first Node Js App",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Hithesh",
+  "license": "ISC"
+}
+
+// Run this command from now on
+npm start
+
+
+EXPRESS JS
+Web framework for Node JS. Makes ur life easy setting up routes instead of using built-in HTTP module in Node JS
+
+
+
+
+
+
+
+
+
+
+
