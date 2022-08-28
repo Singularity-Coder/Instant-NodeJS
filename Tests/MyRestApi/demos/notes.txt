@@ -79,14 +79,35 @@ Web framework for Node JS. Makes ur life easy setting up routes instead of using
 
 MONGOOSE.JS
 https://mongoosejs.com/
+https://stackoverflow.com/questions/7948789/mongod-complains-that-there-is-no-data-db-folder
+https://www.youtube.com/watch?v=GTuJ1p7gpx4
 npm install --save mongoose
 2 ways to connect: MongoDB local or mongodb.com/cloud/atlas
+
+brew tap mongodb/brew
+brew install mongodb-community
+brew services start mongodb-community
+
+Before running mongodb create the data dir in the root path: sudo mkdir -p /data/db
+Know the current user: whoami
+To change dir from read only to write: sudo chown -R singularitycoder /data/db
+Run Mongodb: mongod
 
 
 HOMEBREW
 https://superuser.com/questions/203707/how-to-uninstall-homebrew
+https://stackoverflow.com/questions/36657321/after-installing-homebrew-i-get-zsh-command-not-found-brew/71919315
 Homebrew path: /opt/homebrew/
 Uninstall homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
+Change Homebrew path from .zshrc: export PATH=/opt/homebrew/bin:$PATH
+View services: brew services list
+Start service: brew services start mongodb-community
+Stop service: brew services stop mongodb-community
+
+
+USEFUL STUFF
+To know which user u r in terminal: whoami
+To change dir from read only to write: sudo chown -R singularitycoder /data/db
 
 
 

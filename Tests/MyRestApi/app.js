@@ -6,9 +6,21 @@ console.log("Express.js")
 
 // Import express in this App
 const express = require('express')
+const { default: mongoose } = require('mongoose')
+
+// Import mongo db
+// const mongoose = require("mongoose")
 
 // Init the app. This is the server.
 const app = express()
+
+// Connect to local mongodb. 27017 is the default port
+mongoose.connect("mongodb://localhost:27017/MyRestApi", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
+    console.log("Mongodb connected...")
+})
 
 // This is how you split the code to not bloat a single file
 const productRoute = require("./routes/product.route")
