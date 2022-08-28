@@ -77,8 +77,16 @@ EXPRESS JS
 Web framework for Node JS. Makes ur life easy setting up routes instead of using built-in HTTP module in Node JS
 
 
+MONGOOSE.JS
+https://mongoosejs.com/
+npm install --save mongoose
+2 ways to connect: MongoDB local or mongodb.com/cloud/atlas
 
 
+HOMEBREW
+https://superuser.com/questions/203707/how-to-uninstall-homebrew
+Homebrew path: /opt/homebrew/
+Uninstall homebrew: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 
 
 

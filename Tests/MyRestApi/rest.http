@@ -1,1 +1,21 @@
+
+### Get all products
 GET http://localhost:3000/products
+
+### Create a product
+POST http://localhost:3000/products/create_product
+
+### Get product by ID
+GET http://localhost:3000/products/id
+
+### Update product by ID
+PATCH http://localhost:3000/products/id
+
+### Delete product by ID
+DELETE http://localhost:3000/products/id
+
+### Testing invalid route
+GET http://localhost:3000/abc_xyz
+
+### Testing custom error route
+POST http://localhost:3000/products/create_category
