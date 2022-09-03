@@ -2,13 +2,28 @@ NODE JS AND MONGO DB
 
 
 THEORY
-Ctrl + ~ to open terminal in VS Code
 RESTful principles - HTTP Verbs - GET, PUT, PATCH, POST, UPDATE
 MVC Pattern - No view
 Express Framework for building the API
 DB - Mongo DB
 Mongoose - schema based solution to model the data
+Query String (req.query): http://localhost:3000/products?id=6
+Route Parameters (req.params): http://localhost:3000/products/6
 
+Request Body (req.body): (
+POST http://localhost:3000/products
+Content-Type: application/json
+{
+  "name": "iMacPro",
+  "price": 3000
+}
+
+POST http://localhost:3000/products
+Content-Type: application/x-www-form-urlencoded
+name=iMacPro&price=3000
+)
+
+---------------------------------------------------------------------------------------------------------------------------------------
 
 NODE JS
 https://nodejs.org/en/download/ 
@@ -17,15 +32,19 @@ https://nodejs.org/en/download/
 - It is Async and event driven - All APIs are non-blocking IO - so we can use callbacks or promises or async await 
 - It is single threaded but can run multiple instances of the same app on multiple thread
 - NPM is node package manager for node.js modules, comes preinstalled with NodeJS - www.npmjs.com
+- Promises and Async Await: 
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 CHECK VERSION
 node —version 
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 VS CODE EXTENSIONS
 REST Client
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 CREATE PROJECT
 cd Desktop/
@@ -37,10 +56,12 @@ touch app.js
 node app.js           (This will run the app if the file is saved)
 console.log(“I am running…”);        // This is for printing stuff
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 PACKAGE.JS
 This is like Gradle. It manages ur packages
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 INSTALL NODEMON NPM PACKAGE
 // If u run app with this it will run anytime a change is made
@@ -52,6 +73,7 @@ nodemon app.js
 // To stop the app 
 Ctrl + c
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 DIFFERENT START MECHANISMS
 package.json
@@ -72,15 +94,18 @@ package.json
 // Run this command from now on
 npm start
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 EXPRESS JS
 Web framework for Node JS. Makes ur life easy setting up routes instead of using built-in HTTP module in Node JS
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 MONGOOSE.JS
 https://mongoosejs.com/
 https://stackoverflow.com/questions/7948789/mongod-complains-that-there-is-no-data-db-folder
 https://www.youtube.com/watch?v=GTuJ1p7gpx4
+https://stackoverflow.com/questions/55794145/mongonetworkerror-connection-3-to-cluster0-shard-00-02-z0urk-mongodb-net27017
 npm install --save mongoose
 2 ways to connect: MongoDB local or mongodb.com/cloud/atlas
 
@@ -93,6 +118,10 @@ Know the current user: whoami
 To change dir from read only to write: sudo chown -R singularitycoder /data/db
 Run Mongodb: mongod
 
+My IP: 103.180.3.51/32
+IP access from anywhere: 0.0.0.0/0
+
+---------------------------------------------------------------------------------------------------------------------------------------
 
 HOMEBREW
 https://superuser.com/questions/203707/how-to-uninstall-homebrew
@@ -103,11 +132,15 @@ Change Homebrew path from .zshrc: export PATH=/opt/homebrew/bin:$PATH
 View services: brew services list
 Start service: brew services start mongodb-community
 Stop service: brew services stop mongodb-community
+Fix issues: brew doctor
 
+---------------------------------------------------------------------------------------------------------------------------------------
 
 USEFUL STUFF
+Ctrl + ~ to open terminal in VS Code
 To know which user u r in terminal: whoami
 To change dir from read only to write: sudo chown -R singularitycoder /data/db
+https://www.oliverelliott.org/article/computing/ref_unix/18/
 
 
 

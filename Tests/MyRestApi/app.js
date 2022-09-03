@@ -14,12 +14,58 @@ const { default: mongoose } = require('mongoose')
 // Init the app. This is the server.
 const app = express()
 
-// Connect to local mongodb. 27017 is the default port
-mongoose.connect("mongodb://localhost:27017/MyRestApi", {
+// Middleware for logging req.body. This will ONLY parse the request body with the header of Content-Type of "application/json"
+app.use(express.json())
+// This will ONLY parse the request body with the header of Content-Type of "application/x-www-form-urlencoded". extended: true will make the url encoded form body work like json.
+app.use(express.urlencoded({extended: true}))
+
+// Connect to Remote mongodb
+// mongodb+srv://singularitycoder:<password>@cluster0.baf4qp0.mongodb.net/?retryWrites=true&w=majority/dbName
+// DB will be created only when the first item is added to the DB. Set 0.0.0.0/0 as IP to access it from any system.
+mongoose.connect("mongodb+srv://cluster0.baf4qp0.mongodb.net/", {
+    dbName: "MyRestApi",
+    user: "",
+    pass: "",
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
     console.log("Mongodb connected...")
+})
+
+// Connect to local mongodb. 27017 is the default port
+// mongoose.connect("mongodb://localhost:27017/MyRestApi", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// }).then(() => {
+//     console.log("Mongodb connected...")
+// })
+
+// Parse Query Params
+// app.all() route is a wildcard for all the http verbs. All http verbs are handled by this "all" route. We dont have to create a separate route for each of them. 
+app.all("/query_params_test", (req, res) => {
+    console.log(req.query)
+    console.log(req.query.name)
+    res.send(req.query)
+})
+
+// Parse Route Params
+app.all("/route_params_test/:id/:name", (req, res) => {
+    console.log(req.params)
+    res.send(req.params)
+})
+
+// Parse JSON Request Body Params
+app.all("/json_request_body_params_test", (req, res) => {
+    // To use req.body we need middleware app.use(express.json())
+    console.log(req.body)
+    res.send(req.body)
+})
+
+// Parse form-url-encoded Request Body Params
+app.all("/form_url_encoded_request_body_params_test", (req, res) => {
+    // To use req.body we need middleware app.use(express.urlencoded({extended: true}))
+    console.log(req.body)
+    res.send(req.body)
 })
 
 // This is how you split the code to not bloat a single file

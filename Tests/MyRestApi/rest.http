@@ -4,6 +4,12 @@ GET http://localhost:3000/products
 
 ### Create a product
 POST http://localhost:3000/products/create_product
+Content-Type: application/json
+
+{
+    "name": "iPhone 11",
+    "price": 699
+}
 
 ### Get product by ID
 GET http://localhost:3000/products/id
@@ -19,3 +25,24 @@ GET http://localhost:3000/abc_xyz
 
 ### Testing custom error route
 POST http://localhost:3000/products/create_category
+
+### Testing query strings
+GET http://localhost:3000/query_params_test?name=iMac&price=2399
+
+### Testing route params. This is the client that is sending the id value 97654345678965 which the server will receive and log it.
+GET http://localhost:3000/route_params_test/97654345678965/iMac
+
+### Testing JSON request body params
+POST http://localhost:3000/json_request_body_params_test
+Content-Type: application/json
+
+{
+    "name": "iMacPro",
+    "price": 4999
+}
+
+### Testing form-url-encoded request body params
+POST http://localhost:3000/form_url_encoded_request_body_params_test
+Content-Type: application/x-www-form-urlencoded
+
+name=iMac&price=499
